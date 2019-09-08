@@ -10,7 +10,7 @@
  */
 
 import * as AWS from 'aws-sdk';
-import * as aws4 from "aws4";
+//import * as aws4 from "aws4";
 import * as http from 'http';
 import { Connection } from '@elastic/elasticsearch'
 
