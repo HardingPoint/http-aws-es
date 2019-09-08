@@ -1,6 +1,6 @@
 {
   "name": "@ulangi/http-aws-es",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Use the elasticsearch-js client with Amazon ES",
   "repository": "https://github.com/TheDeveloper/http-aws-es",
   "bugs": "https://github.com/TheDeveloper/http-aws-es/issues",
