@@ -12,10 +12,10 @@
  */
 
 const AWS = require('aws-sdk');
-const HttpConnector = require('elasticsearch/src/lib/connectors/http');
+const { Connection } = require('@elastic/elasticsearch')
 const HttpClient = require('./src/node');
 
-class HttpAmazonESConnector extends HttpConnector {
+class HttpAmazonESConnection extends Connection {
   constructor(host, config) {
     super(host, config);
 
@@ -106,4 +106,4 @@ class HttpAmazonESConnector extends HttpConnector {
   }
 }
 
-module.exports = HttpAmazonESConnector;
+module.exports = HttpAmazonESConnection;

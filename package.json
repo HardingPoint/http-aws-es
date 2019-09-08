@@ -1,6 +1,6 @@
 {
-  "name": "http-aws-es",
-  "version": "6.0.0",
+  "name": "@ulangi/http-aws-es",
+  "version": "7.0.0",
   "description": "Use the elasticsearch-js client with Amazon ES",
   "repository": "https://github.com/TheDeveloper/http-aws-es",
   "bugs": "https://github.com/TheDeveloper/http-aws-es/issues",
@@ -25,7 +25,7 @@
     "aws-sdk": "^2.138.0",
     "browserify": "^14.5.0",
     "chai": "^4.1.2",
-    "elasticsearch": "^15.0.0",
+    "elasticsearch": "^16.0.0",
     "eslint": "^4.9.0",
     "express": "^4.16.2",
     "minimist": "^1.2.0",
