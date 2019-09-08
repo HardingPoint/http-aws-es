@@ -28,13 +28,11 @@ export function createConnectionClass(awsConfig: AWS.Config): any {
 
       this.makeRequest = (reqParams: http.ClientRequestArgs ) => {
 
-        const options = {
-          host: this.url.host,
-          region: awsConfig.region
-        }
+        reqParams.host = this.url.host
+        // @ts-ignore
+        reqParams.region = awsConfig.region
 
-        aws4.sign(options, awsConfig.credentials)
-        Object.assign(reqParams, options)
+        aws4.sign(reqParams, awsConfig.credentials)
 
         return originalMakeRequest(reqParams)
       }
