@@ -12,7 +12,7 @@
  */
 
 const AWS = require('aws-sdk');
-const { Connection } = require('@elastic/elasticsearch')
+const { Connection } = require('elasticsearch')
 const HttpClient = require('./src/node');
 
 class HttpAmazonESConnection extends Connection {
