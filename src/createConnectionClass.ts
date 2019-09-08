@@ -29,13 +29,15 @@ export function createConnectionClass(awsConfig: AWS.Config): any {
       this.makeRequest = (reqParams: http.ClientRequestArgs ) => {
 
         const options = {
-          host: this.url.href,
+          host: this.url.host,
           region: awsConfig.region
         }
 
-        aws4.sign(options, awsConfig.credentials)
-
         Object.assign(reqParams, options)
+
+        // @ts-ignore
+        const signer = new AWS.Signers.V4(reqParams, 'es');
+        signer.addAuthorization(awsConfig.credentials, new Date());
 
         return originalMakeRequest(reqParams)
       }
