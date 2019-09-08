@@ -16,8 +16,8 @@
     "extension",
     "sign"
   ],
-  "main": "dist/AmazonESConnection.js",
-  "types": "dist/AmazonESConnection.d.ts",
+  "main": "dist/createConnectionClass.js",
+  "types": "dist/createConnectionClass.d.ts",
   "peerDependencies": {
     "aws-sdk": "^2.524.0",
     "@elastic/elasticsearch": "^7.0.0"
