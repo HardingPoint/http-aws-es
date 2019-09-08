@@ -16,29 +16,36 @@
     "extension",
     "sign"
   ],
-  "main": "connector.js",
+  "main": "dist/AmazonESConnection.js",
   "peerDependencies": {
-    "aws-sdk": "^2.138.0",
-    "elasticsearch": "^15.0.0"
+    "aws-sdk": "^2.524.0",
+    "@elastic/elasticsearch": "^7.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.524.0",
+    "aws4": "^1.8.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.138.0",
+    "@types/aws4": "^1.5.1",
     "browserify": "^14.5.0",
     "chai": "^4.1.2",
-    "elasticsearch": "^16.0.0",
+    "@elastic/elasticsearch": "7.3.0",
+    "@types/node": "^12.7.4",
     "eslint": "^4.9.0",
     "express": "^4.16.2",
     "minimist": "^1.2.0",
     "mocha": "^4.0.1",
     "nyc": "^11.2.1",
     "puppeteer": "^0.12.0",
-    "sinon": "^4.0.0"
+    "sinon": "^4.0.0",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "test": "nyc --all mocha",
     "integration-test": "mocha test/integration",
     "posttest": "npm run lint",
-    "lint": "eslint connector.js src"
+    "lint": "eslint connector.js src",
+    "compile": "tsc -noUnusedLocals -noUnusedParameters -p ./"
   },
   "browser": {
     "./src/node.js": "./src/xhr.js"

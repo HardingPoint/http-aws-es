@@ -4,21 +4,15 @@ const EventEmitter = require('events').EventEmitter;
 
 const AWS = require('aws-sdk');
 const expect = require('chai').expect;
-const Host = require('elasticsearch/src/lib/host');
 const sinon = require('sinon');
 
 const Connector = require('../connector')
 
 describe('constructor', function() {
 
-  it('throws when no host is provided', function () {
-    expect(() => new Connector()).to.throw();
-  });
-
   it('assigns httpOptions', function() {
-    const httpOptions = { foo: 'bar' };
-    const host = new Host();
-    const connector = new Connector(host, { httpOptions });
+    const httpOptions = { url: 'bar' };
+    const connector = new Connector({}, { httpOptions });
 
     expect(connector.httpOptions).to.deep.equal(httpOptions);
   });
@@ -32,8 +26,7 @@ describe('request', function () {
       region: 'us-east-1'
     });
 
-    const host = new Host();
-    const connector = new Connector(host, {});
+    const connector = new Connector({});
 
     sinon.stub(connector, 'getAWSCredentials').resolves({
       secretAccessKey: 'abc',
